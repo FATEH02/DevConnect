@@ -1,0 +1,18 @@
+{
+  "name": "devconnect",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "this is my major project where i am making social media for developers",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "fateh singh",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.2"
+  }
+}

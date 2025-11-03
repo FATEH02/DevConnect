@@ -1,0 +1,17 @@
+import jwt from "jsonwebtoken";
+
+const generateAccessToken =  function (payload) {
+  return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: ACCESS_TOKEN_EXPIRY,
+  });
+};
+
+const generateRefressToken =  function (payload) {
+    return jwt.sign(
+        payload,
+        process.env.REFRESH_TOKEN_SECRET,
+        {expiresIn:process.env.REFRESH_TOKEN_EXPIRY}
+    )
+};
+
+export {generateAccessToken,generateRefressToken}

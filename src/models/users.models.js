@@ -48,12 +48,7 @@ const UserSchema = new mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
       },
-    ],
-    role: {
-      type: String,
-      default: "user",
-      enum: ["user", "admin"],
-    },
+    ]
   },
   {
     timestamps: true,
@@ -70,5 +65,6 @@ UserSchema.pre('save',function(){
 
 
 const User = mongoose.model("User",UserSchema);
+
 export default User
 

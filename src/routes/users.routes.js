@@ -1,7 +1,8 @@
 import { Router } from "express";
 const router = Router();
-import { UserRegiser , UserLogin } from "../controllers/user.controller.js";
+import { UserRegiser , UserLogin , Logout } from "../controllers/user.controller.js";
 import upload from "../middleware/multer.middleware.js"
+import VerifyJWT from "../middleware/verifyJWT.middleware.js";
 
 console.log("hello");
 
@@ -15,6 +16,8 @@ router.route("/register").post(
     ,UserRegiser)
 
 router.route("/login").post(UserLogin)
+
+router.route("/logout").post(VerifyJWT,Logout)
 
 
 

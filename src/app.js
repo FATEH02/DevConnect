@@ -14,9 +14,9 @@ app.use(cors({
 }))
 app.use(json({}))//tels express parsse json data also 
 
-app.use(urlencoded())//urlencoded to parser the urlenced files
 app.use(cookieParser())//to parser cookies
 app.use(express.static("public"))
+app.use(express.urlencoded({extended:true}))//urlencoded to parser the urlenced files
 app.use("/api/v1/users",userRouter)
 
 //this all was setup now i will start the ap 

@@ -1,9 +1,10 @@
 import { v2 as cloudinary } from "cloudinary";
+import fs from "fs"
 
 cloudinary.config({
-  cloud_name: "dukumrk8b",
-  api_key: "854838926691657",
-  api_secret: "dYwNfu2gwnjcZ3l068TKrNepdws",
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 
@@ -17,6 +18,7 @@ const uploadimagecloud = async (filepath) => {
     const uploadresponse = await cloudinary.uploader.upload(filepath, {
       resource_type: "auto",
     });
+    fs.unlinkSync(filepath)
     return uploadresponse;
   } catch (error) {
     console.log(
